@@ -13,22 +13,6 @@ class Survey:
         self.updated_at = data['updated_at']
 
     # READ
-    # show all records
-    @classmethod
-    def get_all(cls):
-        query = """SELECT * FROM dojos;"""
-        # make sure to call the connectToMySQL function with the schema you are targeting.
-        results = connectToMySQL('dojo_survey_schema').query_db(query)
-        # Create an empty list to append our instances of surveys
-        surveys = []
-        # Iterate over the db results and create instances of surveys with cls.
-        for survey in results:
-            new_survey = cls(survey)
-            surveys.append( new_survey )
-        return surveys
-
-
-    # READ
     # show one record
     @classmethod
     def show_one(cls, id):

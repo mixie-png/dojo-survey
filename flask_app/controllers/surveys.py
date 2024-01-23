@@ -13,8 +13,6 @@ def create():
 
     # after successful creation of a new Survey, redirect to Result page and display the NEW information
     return redirect(url_for('result', survey_id = Survey.add(request.form)))
-    # return redirect('/result')
-
 
 @app.route('/result/<int:survey_id>')
 def result(survey_id):
